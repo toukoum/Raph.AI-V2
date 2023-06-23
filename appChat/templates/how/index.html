@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>how it works</title>
+    <link rel="stylesheet" href="{% static 'css/style-how.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/point.png' %}">
+
+</head>
+<body>
+
+     <div class="content">
+
+<!--             Utilisation d'une requête ajax pour envoyer la question a une vue /get_answer.-->
+<!--Chargement d'un modèle Hugging Face (Google Flan-t5-xxl) à l'aide de la classe HuggingFaceHub. => -->
+<!--Chargement d'un fichier contenant des documents pertinents (context.txt) à l'aide de la classe TextLoader.-->
+<!--Division des documents en morceaux plus petits à l'aide de la classe CharacterTextSplitter.-->
+<!--Conversion du texte en vecteurs à l'aide de la classe HuggingFaceEmbeddings.-->
+<!--Stockage des vecteurs de chaque document dans une base de données FAISS.-->
+<!--Recherche de similarité dans la base de données pour trouver les documents les plus pertinents en fonction de la question de l'utilisateur.-->
+<!--Construction d'un modèle de chaîne de langage naturel (LLM) à l'aide de LLMChain, qui utilise le modèle Hugging Face et une chaîne de texte prédéfinie (le "prompt") pour générer une réponse à la question de l'utilisateur.-->
+<!--Renvoi de la réponse en format JSON pour être affichée à l'utilisateur.-->
+         <h2>This is a short Description about my Experiment with LangChain, LLM Open Source Model, GPT model and Hugging Face</h2>
+
+         <div class="line"></div>
+         <ol>
+             <li><strong> Loading</strong> of a <strong>gpt-3.5 turbo model</strong> using the <a href="https://github.com/xtekky/gpt4free">g4f</a> repository project on github (free)</li>
+             <li><strong> Loading</strong> of a file containing<strong> relevant informations</strong> about my life (context.txt ) <br> -> contain the main informations of my life for the moment</li>
+             <li>Splitting of the documents into <strong> small chunks</strong> using the CharacterTextSplitter class.</li>
+             <li>Conversion of text into vectors using the <strong>HuggingFaceEmbeddings class </strong> => OPEN SOURCE</li>
+             <li>Storage of the vectors of each document in a <strong>FAISS database</strong>. Like Pinecone</li>
+             <li> <strong>Similarity search</strong> in the database to find the most relevant documents based on the user's question. <br>
+                 So if you ask "What's you favourite meal ?", the similarity search into the vector database of embedding will
+                 return for example "Favourite meal : pasta and lasagna"</li>
+             <li>Construction of a natural language chain model (LLM) using <strong> <a href="https://python.langchain.com/"> LLMChain</a></strong> <br> which uses the Hugging Face model
+                 and a pre-defined text chain (the "prompt") to generate a response to the user's question.
+             </li>
+             <li>Return of the response in <strong> JSON format </strong> to be displayed to the user.</li>
+             <li>Creating an <strong>"artificial memory"</strong> for the model by building a conversation history (adding question/answer). <br> I don't use <a href="https://python.langchain.com/en/latest/reference/modules/memory.html?highlight=converstation%20buffer%20memory">ConversationBufferMemory</a> from Langchain because I make a new AJAX request for each user input.</li>
+            </ol>
+
+         <div class="image"><img src="{% static 'images/langchainwork.png' %}" alt="shema of langchain"></div>
+
+
+         <h2 class="issue">Issues</h2>
+         <div class="line"></div>
+
+
+         <ol class="ol_is">
+             <li>Not possible on the free version of Pythonanywhere hosting service to install PyTorch (not enough space), so I just provide in the prompt template the most important information about me...</li>
+             <li>Sometimes the server doesn't answer correctly and "Unable to fetch answer" message is show... </li>
+         </ol>
+
+         <div class="a-wrapper">
+            <a href="{% url 'homePage' %}" class="button-back">Back to Raph.AI v2.0</a>
+            <a href="https://toukoum.pythonanywhere.com/question/" class="button-back">View Raph.AI v1.0</a>      
+         </div>
+         
+
+         <p id="credit"> @Raphael_Giraud</p>
+     </div>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

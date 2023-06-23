@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&family=Sanchez&family=Varela+Round&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.line{
+  height: 1.4px;
+  width: 100vw;
+  background-color: rgb(83, 83, 83);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* Espace entre le header et le contenu */
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.content ol{
+  width: 60%;
+  margin-left: 130px;
+}
+
+.content ol li {
+  padding-left: 33px;
+  position: relative;
+  margin-top: 46px;}
+  
+
+.content ol li:before {
+    content: '';
+    display: block;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    border: 1.5px solid #ddd;
+    top: -11px;
+    position: absolute;
+    left: -34px;
+    border-color: rgb(221 159 229);
+    z-index: 2;
+  }
+
+  .issue{
+    margin-top: 50px;
+
+  }
+
+
+a{
+  color: black;
+}
+.content h2{
+  text-align: center;
+  width: 60%;
+  font-weight: 600;
+  padding-bottom: 50px;
+}
+
+.image{
+  margin-top: 5vw;
+  width: 35%;
+  margin-bottom: 5vw;
+}
+.image img{
+  width: 100%;
+
+}
+
+#credit{
+  margin: 10vw 0  0 0 ;
+  font-style: italic;
+  font-size: 12px
+}
+
+footer{
+  height: 2vw;
+}
+
+
+.button-back{
+  padding: .6rem .8rem;
+  border-radius: 5px;
+  border: 1.5px solid black;
+  text-decoration: none;
+  margin-top: 10vw;
+  box-shadow: 0px 3px 5px 0px #000000;
+}
+
+.button-back:hover{
+  box-shadow: 0px 1px 3px 0px #000000;
+}
+
+
+.a-wrapper{
+  display: flex;
+  flex-wrap:wrap ;
+  width: 60%;
+  justify-content: space-around;
+}

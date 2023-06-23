@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raph.AI</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-how.css' %}">
+
+
+
+    <link rel="icon" type="image/png" href="{% static 'images/avatar.png' %}">
+
+</head>
+
+
+<body>
+    {% csrf_token %}
+    <section class="section-popup">
+        <div class="popup">
+            <img  class="img-popup-1" src="{% static 'images/tache-haut.png' %}" alt="decor">
+            <h2>Bienvenue dans Raph.AI</h2>
+            <p class="desc-text">Vous vous apprêtez à me parler, ou du moins à mon avatar. <br>
+                Le but de ce playground est d'avoir une conversation virtuelle avec moi. <br>
+                Les réponses peuvent être surprenantes, alors soyez créatif...
+            </p>
+            <button class="button-cp" type="button" >C'est parti !</button>
+
+            </button>
+            <p class="ita-text">Basé sur le modèle gpt3.5-turbo d’Open AI.</p>
+            <img class="img-popup-2" src="{% static 'images/avatar-tache.png' %}" alt="decor-2">
+            
+        </div>
+
+    </section>
+
+    <section class="intro-section">
+
+        <div class="title-image-wrapper">
+        <div class="title-image">
+            <img src="{% static 'images/avatar.png' %}" alt="avatar de ma grosse gueule">
+            <h1 class="main-title">Raph.AI</h1>
+        </div>
+    </div>
+
+    <div class="able-wrapper">
+        <div class="able">
+            
+            <div class="examples colbox">
+                <img src="{% static 'images/sun.svg' %}" alt="sun logo">
+                <h3>Exemples</h3>
+
+                <a class="input_example" href="#">
+                    <div class="box">
+                        <p>"Quel est ta date de naissance ?"</p>
+                        <img src="{% static 'images/arrow-white.png' %}" alt="go arrow">
+                    </div>
+                </a>
+
+                <a class="input_example"  href="#">
+                    <div class="box">
+                        <p>"Raconte moi ta vie depuis le collège"</p>
+                        <img src="{% static 'images/arrow-white.png' %}" alt="go arrow">
+                    </div>
+                </a>
+                
+                <a class="input_example"  href="#">
+                    <div class="box">
+                        <p>"Quels sont tes passions dans la vie ? Donne ta réponse en liste"</p>
+                        <img src="{% static 'images/arrow-white.png' %}" alt="go arrow">
+                    </div>
+                </a>
+                
+                
+            </div>
+
+            <div class="capabilities colbox">
+                <img src="{% static 'images/flash.svg' %}" alt="flash logo">
+                <h3>Possibilités</h3>
+                <div class="box">
+                    <p>Je connais presque toute la vie de Raphael !</p>
+                </div>
+                <div class="box">
+                    <p>Mémoire de ce que l'utilisateur a dit plus tôt dans la conversation</p>
+                </div>
+                <div class="box">
+                    <p>Permet à l'utilisateur de fournir des correction</p>
+                </div>
+                
+            </div>
+
+            <div class="example colbox">
+                <img id="warn" src="{% static 'images/warn.svg' %}" alt="warn logo">
+                <h3>Limitations</h3>
+                <div class="box">
+                    <p>Je peux produire des réponses incorrect</p>
+                </div>
+                <div class="box">
+                    <p>Je peux produire des réponses incomplètes</p>
+                </div>
+                <div class="box">
+                    <p>Je ne connaît pas l'actualité alors que le vrai Raph si ;)</p>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    </section>
+
+    <section class="chat-section">
+
+    </section>
+
+    <div class="down-div"> </div>
+    
+
+    <div class="down-part">
+        <a class="link-restart" href="">
+            <div class="restart-div">
+                <p>Restart Conversation</p>
+                <img src="{% static 'images/restart.png' %}" alt="logo restart">
+            </div>     
+        </a>
+        
+
+        <div class="all-input">
+            <form id="question-form" >
+                <div class="input-group">
+                    <input type="text" autocomplete="off" class="form-control" id="inputField" placeholder="Talk with Raphael..." required >
+                    <button class="btn" type="submit" >
+                    <img src="{% static 'images/sent-icon.png' %}" alt="Submit icon">
+                    </button>
+                </div>
+            </form>
+    
+            <div class="under-text">
+                <p>V2.0. <a id="how-link" href="{% url 'how' %}">How it's work </a>?  Free Research Preview. RaphA.I. may produce inaccurate information about Raphael. For v1.0 : <a href="https://toukoum.pythonanywhere.com/question/">here</a></p>
+            </div>
+
+        </div>
+        
+    </div>
+
+  
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/cookie.js' %}"></script>
+
+</body>
+</html>
