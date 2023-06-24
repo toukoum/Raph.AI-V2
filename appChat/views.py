@@ -5,10 +5,8 @@ from django.shortcuts import render
 
 from typing import Optional, List, Mapping, Any
 from langchain.llms.base import LLM
-import gpt4free
+import g4f
 from langchain import ConversationChain, LLMChain, PromptTemplate
-import gpt4free
-from gpt4free import Provider, forefront
 from langchain.memory import ConversationBufferMemory
 
 
@@ -29,8 +27,10 @@ class EducationalLLM(LLM):
         return "custom"
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
-        return gpt4free.Completion.create(Provider.You, prompt=prompt)
-        
+        # return gpt4free.Completion.create(Provider.You, prompt=prompt)
+        return g4f.ChatCompletion.create(model='gpt-3.5-turbo',  messages=[
+                                        {"role": "user", "content": prompt}]) # alterative model setting
+
 
 def get_answer(request):
     if request.method == 'POST':
