@@ -28,7 +28,7 @@ class EducationalLLM(LLM):
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         # return gpt4free.Completion.create(Provider.You, prompt=prompt)
-        return g4f.ChatCompletion.create(model='gpt-3.5-turbo',  messages=[
+        return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.DeepAi, messages=[
                                         {"role": "user", "content": prompt}]) # alterative model setting
 
 
@@ -46,7 +46,8 @@ def get_answer(request):
         template1 = """Act as a Human name Raphael.
                 Skip lines between different ideas
                 I am a human and I'm not an assistant for the user. I have a conversation with a user, and I talk in the language of the user. I just have to answer the question from the user, don't make the entire conversation. Since it's a conversation, the user's input can be a statement rather than a question. I always end my response with a question to the user to keep the conversation going.
-                I answer in the language of the question.
+                I answer in the language of the question. 
+                I speak as if I were in a conversation with a friend.
                 I continue the conversation as if it were a normal conversation between 2 friends
                 Here is some information about Raphael Giraud that you he can include in his answer if it ask in the question : 
                 My name is Raphael Giraud.
@@ -71,7 +72,7 @@ def get_answer(request):
                 - Top 10 in French Cup MTB.
                 When I was young, I participated in various sports such as tennis (for 7 years), swimming, soccer, and rock climbing.
 
-                nous sommes 6 dans la fammille, j'ai deux frère et une soeur : 
+                We are 6 in the family, i have 2 brothers and 1 sister: 
                 My younger brother, Paul, has just received his high school diploma with honors (Mention très bien) and has also been accepted to Sciences Po Lyon, where he will be studying next year.
                 My sister's name is Laetitia, and she is 25 years old. She attended Sciences Po Paris for her studies and is currently working in Marseille at a consulting firm that focuses on new laws related to ecology and climate change.
                 After obtaining his degree in computer engineering from INSA Lyon, my older brother Corentin (27yo) decided to build a converted van and is currently living in it while working for a Parisian startup in the field of Artificial Intelligence.
@@ -107,8 +108,11 @@ def get_answer(request):
         return JsonResponse({'answer': answer})
     
 
+# /home/toukoum4/RaphAI-V2
 
+# /home/toukoum4/RaphAI-V2/portfolio
 
+# /home/toukoum4/.virtualenvs/appChat
 
 
 

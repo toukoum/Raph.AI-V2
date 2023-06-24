@@ -130,7 +130,7 @@ window.addEventListener('load', function() {
 
             var csrf = $("input[name=csrfmiddlewaretoken]").val();
 
-            console.log('question de l user :' + questionUser);
+            // console.log('question de l user :' + questionUser);
 
             $.ajax({
                 url: '/get_answer/',
@@ -144,17 +144,17 @@ window.addEventListener('load', function() {
                 success: function (data) {
                     
                 
-                    answeer = data.answer;
+                    answeerHistorik = data.answer;
 
-                    answeer = unicodeToChar(answeer);
-                    console.log('Test 2' + answeer);
+                    answeer = unicodeToChar(answeerHistorik);
+                    // console.log('Test 2' + answeer);
 
                     answeer = answeer.replace(/\n/g, "<br>"); // Remplacer tous les sauts de ligne par des balises <br>
 
 
                     setTimeout(function() {
                         if(data.answer != "Unable to fetch the response, Please try again."){
-                            historik+=questionUser + "\n"  + answeer + "\n";
+                            historik+=questionUser + "\n"  + answeerHistorik + "\n";
                         }
                     }, 1000); // Délai de 1 seconde
                     
@@ -171,7 +171,7 @@ window.addEventListener('load', function() {
                     
                     const mots_reponse = answeer.split(/\s+/); // Utilisation de l'expression régulière /\s+/ pour diviser le texte par espaces et sauts de ligne
                     // const mots_reponse = answeer.split(" ");
-                    console.log("longueur des mots : " + mots_reponse)
+                    // console.log("longueur des mots : " + mots_reponse)
                     let i = 0;
             
 
@@ -209,7 +209,7 @@ window.addEventListener('load', function() {
             })
             window.scrollTo(0, document.body.scrollHeight);
 
-            console.log("historik:" + historik)
+            // console.log("historik:" + historik)
             
             // Ajouter la nouvelle vidéo à la nouvelle div
             divAnswer.appendChild(video);
