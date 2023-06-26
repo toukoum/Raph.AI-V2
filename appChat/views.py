@@ -10,6 +10,9 @@ from langchain import ConversationChain, LLMChain, PromptTemplate
 from langchain.memory import ConversationBufferMemory
 
 
+import logging
+
+
 
 def index(request):
     return render(request, "appChat/index.html")
@@ -28,17 +31,20 @@ class EducationalLLM(LLM):
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         # return gpt4free.Completion.create(Provider.You, prompt=prompt)
-        return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.DeepAi, messages=[
+        return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.Lockchat, messages=[
                                         {"role": "user", "content": prompt}]) # alterative model setting
 
-
 def get_answer(request):
+
+    logging.basicConfig(filename='conversation.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
     if request.method == 'POST':
 
 
         llm = EducationalLLM()
 
         query = request.POST.get('question', '')  # Récupérer la question de l'utilisateur
+        logging.info('Question: %s', query)
 
         historik = request.POST.get('historik', '') # Récupérer l'historique
 
@@ -102,12 +108,14 @@ def get_answer(request):
         # .encode('latin-1').decode('unicode-escape')
         print("réponse de l'ia : " +  answer)
 
+        logging.info('Réponse de l\'IA: %s', answer)
+
 
         # print("réponse de l'ia : " + answer)
         # Retourner la réponse en JSON
         return JsonResponse({'answer': answer})
     
-
+# /home/toukoum4/RaphAI-V2/g4f/Provider/Providers/helpers/you.py
 # /home/toukoum4/RaphAI-V2
 
 # /home/toukoum4/RaphAI-V2/portfolio
