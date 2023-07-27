@@ -31,7 +31,7 @@ class EducationalLLM(LLM):
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         # return gpt4free.Completion.create(Provider.You, prompt=prompt)
-        return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.Lockchat, messages=[
+        return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.DeepAi, messages=[
                                         {"role": "user", "content": prompt}]) # alterative model setting
 
 def get_answer(request):

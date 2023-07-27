@@ -1,0 +1,182 @@
+2023-07-03 17:28:08,531 - Question: Quel est ta date de naissance ?
+2023-07-03 17:28:10,027 - Internal Server Error: /get_answer/
+Traceback (most recent call last):
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 107, in get_answer
+    answer = chatgpt_chain.predict(human_input=query, historik=historik)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 252, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 166, in __call__
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 160, in __call__
+    self._call(inputs, run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 92, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 102, in generate
+    return self.llm.generate_prompt(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 140, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 206, in generate
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 198, in generate
+    self._generate(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 500, in _generate
+    else self._call(prompt, stop=stop, **kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 34, in _call
+    return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.Lockchat, messages=[
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/__init__.py", line 33, in create
+    if stream else ''.join(engine._create_completion(model.name, messages, stream, **kwargs)))
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/Provider/Providers/Lockchat.py", line 28, in _create_completion
+    token = json.loads(token.decode('utf-8').split('data: ')[1])['choices'][0]['delta'].get('content')
+IndexError: list index out of range
+2023-07-03 17:38:34,800 - Question: Quel est ta date de naissance ?
+2023-07-03 17:38:37,372 - Internal Server Error: /get_answer/
+Traceback (most recent call last):
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 107, in get_answer
+    answer = chatgpt_chain.predict(human_input=query, historik=historik)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 252, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 166, in __call__
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 160, in __call__
+    self._call(inputs, run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 92, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 102, in generate
+    return self.llm.generate_prompt(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 140, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 206, in generate
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 198, in generate
+    self._generate(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 500, in _generate
+    else self._call(prompt, stop=stop, **kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 34, in _call
+    return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.Lockchat, messages=[
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/__init__.py", line 33, in create
+    if stream else ''.join(engine._create_completion(model.name, messages, stream, **kwargs)))
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/Provider/Providers/Lockchat.py", line 28, in _create_completion
+    token = json.loads(token.decode('utf-8').split('data: ')[1])['choices'][0]['delta'].get('content')
+IndexError: list index out of range
+2023-07-03 17:45:17,770 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-03 17:45:22,295 - Question: Quel est ta date de naissance ?
+2023-07-03 17:45:22,700 - Réponse de l'IA: 
+2023-07-03 17:45:38,599 - Question: dsfsdf
+2023-07-03 17:45:39,212 - Réponse de l'IA: 
+2023-07-03 17:45:48,765 - Question: Raconte moi ta vie depuis le collège
+2023-07-03 17:45:49,167 - Réponse de l'IA: 
+2023-07-03 17:45:55,601 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-03 17:46:19,085 - Question: Quel est ta date de naissance ?
+2023-07-03 17:46:22,607 - Réponse de l'IA: Ma date de naissance est le 8 janvier 2004 à Montpellier. Et toi, quelle est ta date de naissance ?
+2023-07-03 19:41:19,651 - Question: Quel est ta date de naissance ?
+2023-07-03 19:41:22,896 - Réponse de l'IA: Ma date de naissance est le 8 janvier 2004 à Montpellier. J'ai grandi à Mauguio, une petite ville dans la région métropolitaine de Montpellier. Merci de t'intéresser à moi ! Et toi, quelle est ta date de naissance ?
+2023-07-03 19:46:56,047 - Question: je peux avoir ton cv ?
+2023-07-03 19:46:59,700 - Réponse de l'IA: Bien sûr, voici le lien vers mon CV en ligne : https://toukoum.github.io/portfolio/CV_Raphael_Giraud.pdf. J'espère que cela répond à ta demande. Est-ce qu'il y a quelque chose en particulier que tu aimerais savoir sur mon expérience professionnelle ou mes compétences en informatique ?
+2023-07-03 19:50:00,050 - Question: Quel est ta date de naissance ?
+2023-07-03 19:50:03,496 - Réponse de l'IA: Ma date de naissance est le 8 janvier 2004 à Montpellier. Et toi, quelle est ta date de naissance ?
+2023-07-03 19:50:10,694 - Question: raconte moi ta vie 
+2023-07-03 19:50:17,117 - Réponse de l'IA: Eh bien, je suis né le 8 janvier 2004 à Montpellier et j'ai grandi dans la petite ville de Mauguio. J'ai commencé mes études à Mauguio, puis j'ai rejoint un programme sport-études à Voiron lorsque je suis entré en 3ème. J'ai obtenu mon brevet des collèges à Notre Dame des Victoires et j'ai continué mon lycée là-bas également, où j'ai choisi de suivre une filière scientifique axée sur les mathématiques et la physique. Ensuite, j'ai déménagé à Grenoble pour mes études en informatique et il se trouve que je suis également un athlète de haut niveau en VTT. J'aime beaucoup la nature, j'adore les lasagnes et les pâtes, et j'ai un faible pour les dates. Si tu veux en savoir plus sur mon parcours et mes réalisations en VTT, jette un coup d'œil à mon CV sur ce lien : https://toukoum.github.io/portfolio/CV_Raphael_Giraud.pdf. Et toi, quels sont tes centres d'intérêt ?
+2023-07-18 22:06:42,889 - Question: Quel est ta date de naissance ?
+2023-07-18 22:06:43,477 - Réponse de l'IA: 
+2023-07-18 22:07:16,149 - Question: Raconte moi ta vie depuis le collège
+2023-07-18 22:07:16,584 - Réponse de l'IA: 
+2023-07-18 22:07:40,605 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-18 22:09:14,813 - Question: Quel est ta date de naissance ?
+2023-07-18 22:09:15,156 - Réponse de l'IA: {"error":{"message":"Hey! The webpage has been updated. Please refresh the page and try again.","type":"AI.LS: Please refresh","code":"AI.LS: NEED REFRESH"}}
+2023-07-18 22:09:37,052 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-18 22:09:46,925 - Question: Quel est ta date de naissance ?
+2023-07-18 22:09:47,015 - Internal Server Error: /get_answer/
+Traceback (most recent call last):
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 107, in get_answer
+    answer = chatgpt_chain.predict(human_input=query, historik=historik)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 252, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 166, in __call__
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 160, in __call__
+    self._call(inputs, run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 92, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 102, in generate
+    return self.llm.generate_prompt(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 140, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 206, in generate
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 198, in generate
+    self._generate(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 500, in _generate
+    else self._call(prompt, stop=stop, **kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 34, in _call
+    return g4f.ChatCompletion.create(model='gpt-4', provider=g4f.Provider.Bing, messages=[
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/__init__.py", line 33, in create
+    if stream else ''.join(engine._create_completion(model.name, messages, stream, **kwargs)))
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/Provider/Providers/Bing.py", line 342, in _create_completion
+    for token in response:
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/Provider/Providers/Bing.py", line 308, in run
+    loop = asyncio.get_event_loop()
+  File "/home/toukoum/Documents/anaconda/lib/python3.10/asyncio/events.py", line 671, in get_event_loop
+    raise RuntimeError('There is no current event loop in thread %r.'
+RuntimeError: There is no current event loop in thread 'Thread-1 (process_request_thread)'.
+2023-07-18 22:10:12,475 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-18 22:10:26,991 - Question: Quel est ta date de naissance ?
+2023-07-18 22:10:28,061 - Internal Server Error: /get_answer/
+Traceback (most recent call last):
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 107, in get_answer
+    answer = chatgpt_chain.predict(human_input=query, historik=historik)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 252, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 166, in __call__
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/base.py", line 160, in __call__
+    self._call(inputs, run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 92, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/chains/llm.py", line 102, in generate
+    return self.llm.generate_prompt(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 140, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 206, in generate
+    raise e
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 198, in generate
+    self._generate(
+  File "/home/toukoum/.local/lib/python3.10/site-packages/langchain/llms/base.py", line 500, in _generate
+    else self._call(prompt, stop=stop, **kwargs)
+  File "/home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py", line 34, in _call
+    return g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.Aichat, messages=[
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/__init__.py", line 33, in create
+    if stream else ''.join(engine._create_completion(model.name, messages, stream, **kwargs)))
+  File "/home/toukoum/portfolio/pdjango2/portfolio/g4f/Provider/Providers/Aichat.py", line 41, in _create_completion
+    yield response.json()['message']
+KeyError: 'message'
+2023-07-18 22:10:41,935 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-18 22:10:45,551 - Question: Quel est ta date de naissance ?
+2023-07-18 22:11:13,345 - /home/toukoum/portfolio/pdjango2/portfolio/appChat/views.py changed, reloading.
+2023-07-18 22:11:16,969 - Question: Quel est ta date de naissance ?
+2023-07-18 22:11:20,172 - Réponse de l'IA: Salut! Ma date de naissance est le 8 janvier 2004. Et toi, quelle est ta date de naissance?
+2023-07-18 22:11:33,554 - Question: je suis né le 08/04/2005
+2023-07-18 22:11:36,755 - Réponse de l'IA: Ah, donc tu es né le 8 avril 2005! C'est cool, on est tous les deux nés en début d'année. Est-ce que tu as grandi dans la même ville que ta naissance?
+2023-07-18 22:11:50,940 - Question: je ne te dis pas
+2023-07-18 22:11:55,955 - Réponse de l'IA: D'accord, pas de soucis. Est-ce que tu as des hobbies ou des passions en particulier ? Personnellement, j'adore les sports de plein air et je suis un passionné de VTT. J'aime aussi beaucoup la cuisine italienne, particulièrement les lasagnes et les pâtes. Et toi, quels sont tes centres d'intérêt ?
+2023-07-18 22:12:12,581 - Question: moi j'adore les chiennes
+2023-07-18 22:12:16,813 - Réponse de l'IA: Ah, c'est sympa ! Tu as un chien ? Quelle race préfères-tu ? Personnellement, je suis plus chats que chiens, mais j'apprécie quand même les animaux de compagnie. Sinon, est-ce que tu as également d'autres centres d'intérêt ou passions en dehors des chiens ?
+2023-07-18 22:12:43,724 - Question: et toi ca va ?
+2023-07-18 22:12:47,410 - Réponse de l'IA: Salut ! Oui ça va plutôt bien, merci de demander. En ce moment, je suis à fond dans mes études de programmation et mes entraînements de VTT. Et toi, comment vas-tu ? Tu as des projets ou des choses intéressantes à me raconter ?
+2023-07-27 15:29:49,330 - Question: Quel est ta date de naissance ?
+2023-07-27 15:29:52,037 - Réponse de l'IA: Je suis né le 8 janvier 2004 à Montpellier. Et toi, quelle est ta date de naissance ?

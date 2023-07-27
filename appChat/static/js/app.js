@@ -117,7 +117,7 @@ window.addEventListener('load', function() {
 
             // Créer un élément <source> à l'intérieur de la nouvelle vidéo
             const source = document.createElement('source');
-            source.src = "/static/videos/test.webm";
+            source.src = "/static/videos/vid-avatar.mp4";
             source.type = "video/mp4";
 
             // Ajouter l'élément <source> à la nouvelle vidéo
@@ -128,6 +128,7 @@ window.addEventListener('load', function() {
 
             window.scrollTo(0, document.body.scrollHeight);
 
+            // token pour django security
             var csrf = $("input[name=csrfmiddlewaretoken]").val();
 
             // console.log('question de l user :' + questionUser);
